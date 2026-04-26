@@ -1,5 +1,7 @@
 package leetcode75;
 
+import static java.lang.Math.max;
+
 public class maxSubarray {
 
     public static void main(String[] args) {
@@ -13,20 +15,24 @@ public class maxSubarray {
     }
     public int maxSubArray(int[] nums) {
 
-        int currentSum = 0;
-        int maxSum = nums[0];
+        // Initializing Sum and Max
+        int sum = 0;
+        int maxi = nums[0];
 
-        for (int num : nums){
-            currentSum += num;
+        // Using for Loop
+        for (int i = 0; i < nums.length; i++){
 
-            if (currentSum > maxSum){
-                maxSum = currentSum;
-            }
-            if (currentSum < 0){
-                currentSum = 0;
-            }
+            // Step 1
+            sum = sum + nums[i];
+
+            // Step 2
+            maxi = max(maxi, sum);
+
+            // Step 3
+            if(sum < 0)
+                sum = 0;
+
         }
-        return maxSum;
-
+        return maxi;
     }
 }
