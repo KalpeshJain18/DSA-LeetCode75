@@ -13,12 +13,16 @@ public class LongestSubstringWithoutRepeating {
 
         for (int right = 0; right < s.length(); right++) {
 
+            // shrink window if duplicate exists
             while (set.contains(s.charAt(right))) {
                 set.remove(s.charAt(left));
                 left++;
             }
 
+            // add current character
             set.add(s.charAt(right));
+
+            // update max length
             maxLength = Math.max(maxLength, right - left + 1);
         }
 
