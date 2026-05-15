@@ -2,12 +2,12 @@ package leetcode75;
 
 import java.util.Stack;
 
-class MinStack {
+class minStack {
 
     Stack<Integer> stack;
     Stack<Integer> minStack;
 
-    public MinStack() {
+    public minStack() {
         stack = new Stack<>();
         minStack = new Stack<>();
     }
@@ -40,7 +40,7 @@ class MinStack {
 
     public static void main(String[] args) {
 
-        MinStack obj = new MinStack();
+        minStack obj = new minStack();
 
         obj.push(5);
         obj.push(3);
